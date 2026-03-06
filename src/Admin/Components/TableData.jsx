@@ -1,7 +1,7 @@
 // src/Admin/Components/DataTable.jsx
 import React from 'react';
 
-export default function DataTable({ columns, data, loading }) {
+export default function TableData({ columns, data, loading }) {
   if (loading) {
     return (
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-8">

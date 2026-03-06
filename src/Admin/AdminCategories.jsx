@@ -22,7 +22,7 @@ import {
 } from 'react-icons/gi';
 
 import Modal from './Components/Modal';
-import DataTable from './Components/TableData';
+import TableData from './Components/TableData';
 
 export default function AdminCategories() {
   const [categories, setCategories] = useState([
@@ -282,7 +282,7 @@ export default function AdminCategories() {
       </div>
 
       {/* Categories Table */}
-      <DataTable
+      <TableData
         columns={columns}
         data={filteredCategories}
       />

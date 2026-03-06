@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { FiMail, FiPhone, FiCalendar, FiStar, FiLock, FiUserCheck, FiSearch, FiEdit2, FiTrash2, FiUserX, FiUserCheck as FiUserActive } from "react-icons/fi";
 import StatusBadge from "./Components/StatusBadge";
-import DataTable from "./Components/DataTable";
+import TableData from "./Components/TableData";
 import Modal from "./Components/Modal";
 
 export default function AdminUsers() {
@@ -180,7 +180,7 @@ export default function AdminUsers() {
     {
       header: "Status",
       accessor: "status",
-      render: (row) => <StatusBadge status={row.status} />
+      render: (row) => <BadgeStatus status={row.status} />
     },
     {
       header: "Amallar",
@@ -298,7 +298,7 @@ export default function AdminUsers() {
       </div>
 
       {/* Users Table */}
-      <DataTable 
+      <TableData 
         columns={columns}
         data={filteredUsers}
       />

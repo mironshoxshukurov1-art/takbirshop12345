@@ -151,7 +151,7 @@ export default function AdminOrders() {
     { 
       header: "Status", 
       accessor: "status",
-      render: (row) => <StatusBadge status={row.status} />
+      render: (row) => <BadgeStatus status={row.status} />
     },
     {
       header: "Amallar",
@@ -256,7 +256,7 @@ export default function AdminOrders() {
       </div>
 
       {/* Orders Table */}
-      <DataTable 
+      <TableData 
         columns={columns}
         data={filterOrders()}
       />
@@ -293,7 +293,7 @@ export default function AdminOrders() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Status</p>
-                  <StatusBadge status={selectedOrder.status} />
+                  <BadgeStatus status={selectedOrder.status} />
                 </div>
               </div>
 
