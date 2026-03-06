@@ -1,0 +1,40 @@
+{
+  "topbar": {
+    "contact_center": "Aloqa Markazi"
+  },
+  "navbar": {
+    "categories": "Bo'limlar",
+    "search": "Mahsulot izlash",
+    "profile": "Profil",
+    "orders": "Xaridlarim",
+    "cart": "Savatcha",
+    "login": "Kirish"
+  },
+  "categories": {
+    "payment": "To'lov",
+    "cart": "Savatcha",
+    "contact": "Aloqa",
+    "profile": "Profil",
+    "about": "Biz haqimizda",
+    "signup": "Ro'yxatdan o'tish"
+  },
+  "bottom": {
+    "home": "Asosiy",
+    "favorite": "Sevimli",
+    "cart": "Savatcha",
+    "profile": "Profil"
+  },
+  "footer": {
+    "support_number": "Qo'llab quvvatlash raqami",
+    "info": "Ma'lumot",
+    "about": "Biz haqimizda",
+    "jobs": "Bo'sh ish o'rinlari",
+    "refund": "Tovarlarni almashtirish va to'lovni qaytarish",
+    "help": "Yordam",
+    "bonus": "Bonuslar",
+    "promo": "Aksiyalar",
+    "service": "Servis markazlari",
+    "public_offer": "Ommaviy oferta",
+    "privacy": "Mahfiylik siyosati"
+  }
+}
