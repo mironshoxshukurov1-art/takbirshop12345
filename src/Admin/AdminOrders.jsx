@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiEye, FiCheckCircle, FiXCircle, FiTruck, FiSearch, FiFilter } from "react-icons/fi";
-import StatusBadge from "./components/StatusBadge";
-import DataTable from "./components/DataTable";
+import DataTable from "./Components/DataTable";
+import StatusBadge from "./Components/StatusBadge";
 
 
 export default function AdminOrders() {
