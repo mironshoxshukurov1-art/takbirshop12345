@@ -1,7 +1,6 @@
 // src/Admin/AdminUsers.jsx
 import React, { useState } from "react";
 import { FiMail, FiPhone, FiCalendar, FiStar, FiLock, FiUserCheck, FiSearch, FiEdit2, FiTrash2, FiUserX, FiUserCheck as FiUserActive } from "react-icons/fi";
-import BadgeStatus from "./Components/BadgeStatus";
 import TableData from "./Components/TableData";
 import Modal from "./Components/Modal";
 
@@ -180,7 +179,7 @@ export default function AdminUsers() {
     {
       header: "Status",
       accessor: "status",
-      render: (row) => <BadgeStatus status={row.status} />
+      // render: (row) => <BadgeStatus status={row.status} />
     },
     {
       header: "Amallar",
