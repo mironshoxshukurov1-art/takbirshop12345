@@ -21,8 +21,8 @@ import {
   GiWineGlass, GiBeerBottle, GiChocolateBar, GiCakeSlice
 } from 'react-icons/gi';
 
-import DataTable from './Components/DataTable';
 import Modal from './Components/Modal';
+import DataTable from './Components/TableData';
 
 export default function AdminCategories() {
   const [categories, setCategories] = useState([
@@ -282,7 +282,7 @@ export default function AdminCategories() {
       </div>
 
       {/* Categories Table */}
-      <DataTable 
+      <DataTable
         columns={columns}
         data={filteredCategories}
       />
