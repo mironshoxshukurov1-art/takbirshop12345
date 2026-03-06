@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { FiEye, FiCheckCircle, FiXCircle, FiTruck, FiSearch, FiFilter } from "react-icons/fi";
-import BageStatus from "./Components/BageStatus";
-
-
 
 export default function AdminOrders() {
   const [orders, setOrders] = useState([
