@@ -1,4 +1,4 @@
-// src/Admin/components/StatusBadge.jsx
+// src/Admin/Components/StatusBadge.jsx
 export default function StatusBadge({ status }) {
   const colors = {
     pending: 'bg-yellow-100 text-yellow-700',

@@ -1,9 +1,9 @@
 // src/Admin/AdminUsers.jsx
 import React, { useState } from "react";
 import { FiMail, FiPhone, FiCalendar, FiStar, FiLock, FiUserCheck, FiSearch, FiEdit2, FiTrash2, FiUserX, FiUserCheck as FiUserActive } from "react-icons/fi";
-import StatusBadge from "./components/StatusBadge";
-import DataTable from "./components/DataTable";
-import Modal from "./components/Modal";
+import StatusBadge from "./Components/StatusBadge";
+import DataTable from "./Components/DataTable";
+import Modal from "./Components/Modal";
 
 export default function AdminUsers() {
   const [users, setUsers] = useState([

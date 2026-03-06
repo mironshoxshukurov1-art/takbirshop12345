@@ -1,5 +1,5 @@
 // AdminDashboard.jsx da ishlatish
-import Chart from './components/Chart';
+import Chart from './Components/Chart';
 
 export default function AdminDashboard() {
   return (
