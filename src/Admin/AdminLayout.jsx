@@ -10,7 +10,7 @@ import {
 export default function AdminLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [profileOpen, setProfileOpen] = useState(false);
-  const [adminPhoto, setAdminPhoto] = useState("https://randomuser.me/api/portraits/men/32.jpg");
+  const [adminPhoto, setAdminPhoto] = useState("");
   const [showPhotoUpload, setShowPhotoUpload] = useState(false);
   const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ export default function AdminLayout() {
 
   // Rasmni o'chirish
   const handlePhotoRemove = () => {
-    setAdminPhoto("https://randomuser.me/api/portraits/men/32.jpg");
+    setAdminPhoto("");
     setShowPhotoUpload(false);
   };
 

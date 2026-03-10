@@ -1,15 +1,39 @@
 import React, { useState } from "react";
-import { IoArrowBackOutline, IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import {
+  IoArrowBackOutline,
+  IoEyeOutline,
+  IoEyeOffOutline,
+} from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiChevronRight } from "react-icons/fi";
 
 const products = [
-  { emoji: "👟", name: "Oyoq kiyim", price: "299 000", color: "from-orange-400 to-rose-400" },
-  { emoji: "⌚", name: "Soatlar", price: "850 000", color: "from-violet-400 to-indigo-500" },
-  { emoji: "🕶️", name: "Ko'zoynaklar", price: "175 000", color: "from-teal-400 to-cyan-500" },
-  { emoji: "👜", name: "Sumkalar", price: "540 000", color: "from-pink-400 to-fuchsia-500" },
+  {
+    emoji: "👟",
+    name: "Oyoq kiyim",
+    price: "299 000",
+    color: "from-orange-400 to-rose-400",
+  },
+  {
+    emoji: "⌚",
+    name: "Soatlar",
+    price: "850 000",
+    color: "from-violet-400 to-indigo-500",
+  },
+  {
+    emoji: "🕶️",
+    name: "Ko'zoynaklar",
+    price: "175 000",
+    color: "from-teal-400 to-cyan-500",
+  },
+  {
+    emoji: "👜",
+    name: "Sumkalar",
+    price: "540 000",
+    color: "from-pink-400 to-fuchsia-500",
+  },
 ];
 
 export default function Loginpage() {
@@ -20,6 +44,8 @@ export default function Loginpage() {
   const [loading, setLoading] = useState(false);
   const [shake, setShake] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -32,6 +58,9 @@ export default function Loginpage() {
     setTimeout(() => {
       setLoading(false);
       setSuccess(true);
+      setTimeout(() => {
+        navigate("/");
+      }, 800);
     }, 1800);
   };
 
@@ -177,17 +206,15 @@ export default function Loginpage() {
       `}</style>
 
       <div className="login-wrap flex min-h-screen">
-
         <div className="left-panel flex flex-col justify-center px-12 py-10 w-full max-w-[480px] bg-white relative">
-
-       <div className="flex items-center gap-1 text-xs text-gray-400 mb-4">
-                   <Link to={'/'}>
-                     <span className="hover:text-gray-600 cursor-pointer">Home</span>
-                   </Link>
-                   <FiChevronRight size={12} />
-                   <span className="text-gray-700 font-medium">My Profile</span>
-                 </div>
-
+          <div className="flex items-center gap-1 text-xs text-gray-400 mb-4">
+            <Link to={"/"}>
+              <span className="hover:text-gray-600 cursor-pointer">Home</span>
+            </Link>
+            <FiChevronRight size={12} />
+            <span className="text-gray-700 font-medium">My Profile</span>
+          </div>
+              
           <div className="brand-row flex items-center gap-2 mb-8">
             <img src="/takbir.png" alt="" />
           </div>
@@ -196,7 +223,9 @@ export default function Loginpage() {
             <h1 className="login-title text-3xl font-bold text-gray-900 leading-tight mb-1.5">
               Xush kelibsiz! 👋
             </h1>
-            <p className="text-gray-400 text-sm font-light">Ajoyib mahsulotlarni kashf etish uchun kiring</p>
+            <p className="text-gray-400 text-sm font-light">
+              Ajoyib mahsulotlarni kashf etish uchun kiring
+            </p>
           </div>
 
           <div className="social-row">
@@ -217,9 +246,10 @@ export default function Loginpage() {
           </div>
 
           <form onSubmit={handleLogin} className={shake ? "shake-anim" : ""}>
-
             <div className="mb-3">
-              <label className="block text-xs font-medium text-gray-500 mb-1.5 ml-1">Email</label>
+              <label className="block text-xs font-medium text-gray-500 mb-1.5 ml-1">
+                Email
+              </label>
               <input
                 type="email"
                 value={email}
@@ -230,7 +260,9 @@ export default function Loginpage() {
             </div>
 
             <div className="mb-4 relative">
-              <label className="block text-xs font-medium text-gray-500 mb-1.5 ml-1">Parol</label>
+              <label className="block text-xs font-medium text-gray-500 mb-1.5 ml-1">
+                Parol
+              </label>
               <input
                 type={showPass ? "text" : "password"}
                 value={password}
@@ -243,28 +275,51 @@ export default function Loginpage() {
                 onClick={() => setShowPass((p) => !p)}
                 className="absolute right-3 top-[34px] text-gray-400 hover:text-gray-600 transition-colors"
               >
-                {showPass ? <IoEyeOffOutline size={18} /> : <IoEyeOutline size={18} />}
+                {showPass ? (
+                  <IoEyeOffOutline size={18} />
+                ) : (
+                  <IoEyeOutline size={18} />
+                )}
               </button>
             </div>
 
             <div className="flex items-center justify-between mb-6">
-              <label className="flex items-center gap-2 cursor-pointer" onClick={() => setRemember((p) => !p)}>
-                <div className={`w-4 h-4 rounded flex items-center justify-center border transition-all ${remember ? "bg-orange-500 border-orange-500" : "border-gray-300"}`}>
+              <label
+                className="flex items-center gap-2 cursor-pointer"
+                onClick={() => setRemember((p) => !p)}
+              >
+                <div
+                  className={`w-4 h-4 rounded flex items-center justify-center border transition-all ${remember ? "bg-orange-500 border-orange-500" : "border-gray-300"}`}
+                >
                   {remember && (
                     <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                      <path d="M1 4l2.5 2.5L9 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path
+                        d="M1 4l2.5 2.5L9 1"
+                        stroke="white"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   )}
                 </div>
                 <span className="text-sm text-gray-500">Eslab qolish</span>
               </label>
-              <a href="#" className="text-sm text-orange-500 hover:underline">Parolni unutdingizmi?</a>
+              <a href="#" className="text-sm text-orange-500 hover:underline">
+                Parolni unutdingizmi?
+              </a>
             </div>
 
             {success ? (
               <div className="scale-in w-full py-3.5 rounded-xl bg-green-500 flex items-center justify-center gap-2 text-white font-medium pulse-ring">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M4 10l4 4 8-8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path
+                    d="M4 10l4 4 8-8"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
                 Muvaffaqiyatli kirildi!
               </div>
@@ -279,24 +334,41 @@ export default function Loginpage() {
                     <div className="spin-anim w-4 h-4 border-2 border-white/30 border-t-white rounded-full" />
                     Kirish...
                   </>
-                ) : "Kirish"}
+                ) : (
+                  "Kirish"
+                )}
               </button>
             )}
           </form>
 
           <p className="text-center text-sm text-gray-400 mt-5">
             Hisobingiz yo'qmi?{" "}
-            <a href="#" className="text-orange-500 font-medium hover:underline">Ro'yxatdan o'ting</a>
+            <a href="#" className="text-orange-500 font-medium hover:underline">
+              Ro'yxatdan o'ting
+            </a>
           </p>
         </div>
 
         <div className="right-panel flex-1 relative overflow-hidden flex flex-col items-center justify-center p-12">
-
-          <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-20" style={{ background: "radial-gradient(circle, #f97316, transparent)", transform: "translate(30%, -30%)" }} />
-          <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full opacity-15" style={{ background: "radial-gradient(circle, #818cf8, transparent)", transform: "translate(-30%, 30%)" }} />
+          <div
+            className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-20"
+            style={{
+              background: "radial-gradient(circle, #f97316, transparent)",
+              transform: "translate(30%, -30%)",
+            }}
+          />
+          <div
+            className="absolute bottom-0 left-0 w-72 h-72 rounded-full opacity-15"
+            style={{
+              background: "radial-gradient(circle, #818cf8, transparent)",
+              transform: "translate(-30%, 30%)",
+            }}
+          />
 
           {[...Array(20)].map((_, i) => (
-            <div key={i} className="absolute rounded-full bg-white opacity-20"
+            <div
+              key={i}
+              className="absolute rounded-full bg-white opacity-20"
               style={{
                 width: Math.random() * 3 + 1 + "px",
                 height: Math.random() * 3 + 1 + "px",
@@ -312,30 +384,43 @@ export default function Loginpage() {
             </div>
 
             <h2 className="right-title login-title text-3xl font-bold text-white leading-tight mb-3">
-              Minglab mahsulotlar<br />
+              Minglab mahsulotlar
+              <br />
               <span className="text-orange-400">bir joyda!</span>
             </h2>
             <p className="right-sub text-white/50 text-sm font-light mb-10 leading-relaxed">
-              Elektronika, kiyim, aksessuarlar va yana ko'p narsalar eng qulay narxlarda
+              Elektronika, kiyim, aksessuarlar va yana ko'p narsalar eng qulay
+              narxlarda
             </p>
 
             <div className="product-cards grid grid-cols-2 gap-3">
               {products.map((p, i) => (
                 <div
                   key={i}
-                  className={`product-card glass rounded-2xl p-4 text-left ${["float-1","float-2","float-3","float-4"][i]}`}
+                  className={`product-card glass rounded-2xl p-4 text-left ${["float-1", "float-2", "float-3", "float-4"][i]}`}
                 >
-                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${p.color} flex items-center justify-center text-xl mb-3`}>
+                  <div
+                    className={`w-10 h-10 rounded-xl bg-gradient-to-br ${p.color} flex items-center justify-center text-xl mb-3`}
+                  >
                     {p.emoji}
                   </div>
-                  <p className="text-white/80 text-xs font-medium mb-0.5">{p.name}</p>
-                  <p className="text-white font-semibold text-sm">{p.price} <span className="text-white/40 text-xs">so'm</span></p>
+                  <p className="text-white/80 text-xs font-medium mb-0.5">
+                    {p.name}
+                  </p>
+                  <p className="text-white font-semibold text-sm">
+                    {p.price}{" "}
+                    <span className="text-white/40 text-xs">so'm</span>
+                  </p>
                 </div>
               ))}
             </div>
 
             <div className="right-stats flex items-center justify-center gap-6 mt-8">
-              {[["10K+", "Mahsulot"], ["4.9★", "Reyting"], ["50K+", "Mijoz"]].map(([val, label]) => (
+              {[
+                ["10K+", "Mahsulot"],
+                ["4.9★", "Reyting"],
+                ["50K+", "Mijoz"],
+              ].map(([val, label]) => (
                 <div key={label} className="text-center">
                   <div className="text-white font-bold text-lg">{val}</div>
                   <div className="text-white/40 text-xs">{label}</div>
@@ -344,7 +429,6 @@ export default function Loginpage() {
             </div>
           </div>
         </div>
-
       </div>
     </>
   );

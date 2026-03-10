@@ -10,10 +10,8 @@ import { MyContext } from "../context/MyContext";
 import toast from "react-hot-toast";
 
 export default function Cart() {
-  const { cart, addToCart, removeFromCart } = useContext(MyContext);
+  const { cart, addToCart, removeFromCart, products: data, loading } = useContext(MyContext);
 
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [sort, setSort] = useState("default");

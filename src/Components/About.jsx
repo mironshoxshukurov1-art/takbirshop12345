@@ -335,7 +335,7 @@ function StatItem({ value, label }) {
 export default function About() {
   return (
     <div
-      className="min-h-screen bg-[white]  dark:bg-gray-900 dark:text-white  bg-[#080807] text-gray-100 overflow-x-hidden"
+      className="min-h-screen bg-[white]   dark:bg-gray-900 dark:text-white  bg-[#080807] text-gray-100 overflow-x-hidden"
       style={{ fontFamily: "'DM Sans', sans-serif" }}
     >
       <style>{`
@@ -387,11 +387,11 @@ export default function About() {
         <div className="absolute top-1/2 left-1/5 w-[250px] h-[250px] bg-amber-500/4 rounded-full blur-[80px] pointer-events-none float" />
         <div className="noise absolute inset-0 pointer-events-none" />
 
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <div className="relative light:text-[white z-10 text-center px-6 max-w-5xl mx-auto">
           <p className="reveal text-amber-400 text-xs uppercase tracking-[0.35em] mb-5">
             Biz haqimizda
           </p>
-          <h1 className="reveal delay-1 font-display text-5xl md:text-7xl lg:text-8xl leading-tight text-white mb-7">
+          <h1 className="reveal delay-1 lig font-display text-5xl md:text-7xl lg:text-8xl leading-tight text-white mb-7">
             O'zbekistoning ishonchli
             <br />
             <span className="gradient-text">online do'koni.</span>

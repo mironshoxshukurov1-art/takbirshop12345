@@ -42,7 +42,6 @@ export default function Profil() {
   const [formErrors, setFormErrors] = useState({});
 
   useEffect(() => {
-    // Load saved data from localStorage on component mount
     const savedData = localStorage.getItem('userProfile');
     if (savedData) {
       setForm(JSON.parse(savedData));
@@ -68,7 +67,6 @@ export default function Profil() {
     const file = e.target.files[0];
     if (!file) return;
     
-    // Validate file type and size
     if (!file.type.startsWith('image/')) {
       alert('Please upload an image file');
       return;
@@ -81,7 +79,6 @@ export default function Profil() {
     const reader = new FileReader();
     reader.onload = (ev) => {
       setPhoto(ev.target.result);
-      // Show success animation
       setShowSuccessAnimation(true);
       setTimeout(() => setShowSuccessAnimation(false), 1500);
     };
@@ -96,7 +93,6 @@ export default function Profil() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((p) => ({ ...p, [name]: value }));
-    // Clear error for this field if it exists
     if (formErrors[name]) {
       setFormErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -155,7 +151,6 @@ export default function Profil() {
       variants={containerVariants}
       className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-4 md:p-6 lg:p-10"
     >
-      {/* Success Animation Overlay */}
       <AnimatePresence>
         {showSuccessAnimation && (
           <motion.div
@@ -170,7 +165,6 @@ export default function Profil() {
         )}
       </AnimatePresence>
 
-      {/* Breadcrumb */}
       <motion.div 
         variants={itemVariants}
         className="flex items-center gap-1 text-xs text-gray-400 mb-4"
@@ -182,7 +176,6 @@ export default function Profil() {
         <span className="text-gray-700 font-medium">My Profile</span>
       </motion.div>
 
-      {/* Header */}
       <motion.div 
         variants={itemVariants}
         className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6"
@@ -191,7 +184,6 @@ export default function Profil() {
           My Account
         </h1>
         
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="lg:hidden flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm border border-gray-200"
@@ -202,7 +194,6 @@ export default function Profil() {
       </motion.div>
 
       <div className="flex flex-col lg:flex-row gap-6">
-        {/* Sidebar Navigation */}
         <motion.div 
           variants={itemVariants}
           className={`lg:w-64 shrink-0 ${mobileMenuOpen ? 'block' : 'hidden lg:block'}`}
@@ -236,7 +227,6 @@ export default function Profil() {
           </div>
         </motion.div>
 
-        {/* Main Content */}
         <motion.div 
           variants={itemVariants}
           className="flex-1 bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-xl p-4 md:p-6 lg:p-8"
@@ -246,7 +236,6 @@ export default function Profil() {
               {navItems.find(item => item.id === active)?.label || "Personal Information"}
             </h2>
             
-            {/* Quick Actions */}
             <div className="flex items-center gap-2">
               {isFormTouched && (
                 <motion.button
@@ -350,7 +339,6 @@ export default function Profil() {
             </div>
           </motion.div>
 
-          {/* Form Fields */}
           <motion.div 
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-2 gap-5"

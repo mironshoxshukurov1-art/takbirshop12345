@@ -14,6 +14,7 @@ import ProductDetail from "./ProductDetail";
 import Xaridlarim from "./Components/Xaridlarim";
 import Savatcha from "./Components/Savatcha";
 
+
 import AdminLayout from "./Admin/AdminLayout";
 import AdminDashboard from "./Admin/AdminDashboard";
 import AdminProducts from "./Admin/AdminProducts";
